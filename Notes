@@ -1,0 +1,116 @@
+// Lesson 1
+View (actor)
+    - the visible part of the app (images, buttons, text)
+Model (backstage)
+    - when we use app, we need to save some data (audio that we can play back)
+Controller (director)
+    - change speed
+    - transition between screen
+
+Open Xcode, create new xcode project
+    - apple makes two operating systems: iOS (mobile), OS X (desktop)
+select application on iOS
+    - many templates for application 
+select single view
+    - single view is the simplest, similar to blank template in presentation
+name it pitch perfect
+    - will appear below app icon on phone
+Organization Identifier
+    - reverse website name, e.g. udacity.com->com.udacity
+    - that way bundle identifier will be unique for our app
+choose swift
+choose iphone
+
+// Lesson 2
+Drag a button from the object library into the view
+Editor->size to fit content (box becomes bigger if longer text)
+not centered, we need to add contraints
+    - select button, press down control key and drag mouse up and right
+    - alternatively, click on the align button in the bottom right
+change app icon
+images.xcassets
+    - add a new image set, name it microphone
+when you run the app, the microphone image is blurry around the egdes
+    - depending on the device you are running on, it may resize to 200 x 200 or even 300 x 300 so add a 200x200 version of the image into the 2x box
+    - 1x - non-retina
+    - 2x - retina, double the number of pixels
+    - 3x - iphone 6
+use vectors
+    - usually think of images that can scale up and down and still look good
+    - xcode6 does not have full vector support for iOS though
+    - give it a pdf file at 1x and it will create a @1x.png, @2x.png, @3x.png at build time
+    - cannot change image size
+when we click on the record button, some code will get executed, and that code will go in the viewcontroller.swift
+click on the frame of the view, pull up the identity inspector, you can see that it is related to the class viewcontroller
+name of the file is exactly the same as the class inside the file (viewcontroller)
+two functions
+    - manage events
+    - view did load
+    - did receive memory warning - in case we received a memory loading, what do you want to do with it?
+control click the record button, drag to the view controller, connect storyboard to the file
+    - connection: action (we are trying to do something when we click on the button)
+    - name
+    - Type: UIButton
+    - Event: touchupinside (event triggered with tapping withing bounds of the button)
+method
+    - @IBAction means that this is not ordinary function, connected to the interface builder/storyboard somehow
+circle in the gutter next to action or outlet:
+    - connection status
+        - empty: not connected
+        - filled connected
+        - hover, highlights the object in storyboard the object is connected to
+connections inspector
+    - view existing connections and to make new ones
+recording label
+    - horizontal contraint
+    - ctrl drag from label to microphone, create vertical spacing
+WEAK VS. STRONG
+    - both allows us to manage memory for our variables
+    - strong 
+        - I initialized that variable, so keep it around until I don't ened it anymore
+        - object will be deallocated as soon as there are no strong pointers to it
+        - even if weak pointers, doesn't matter, will still be dealocated once the last strong is gone
+Optionals in Swift
+    - swift allows us to declare a variable, and not declare any value for this variable
+    - weak - SOMEONE ELSE created that variable, and I only want to have a weak reference to that variable
+
+Back to MVC
+    - controller, help view and model communicate
+    - for ex when press the microphone what happens?
+    - controller helps with outlets, hide or unhide the recording label
+    - controller = ViewController.swift
+Action vs. Outlet
+    - action - view sends a message to our ViewController
+    - outlet - view controller has a variable that it will use when it talks to the view
+
+What I have learned thus far:
+MVC model
+    - Model - data
+    - View - the visual parts of the application
+    - Controller - helps the view and the model communicate, specifies what happens for certains events or actions
+How to add objects to the view in the storyboard
+    - button
+    - label
+    - autolayout/centering
+        - either ctrl and drag mouse, or click on align
+        - set constraints either vertical or horizontal
+            - relative to other objects
+            - within the view
+    - editor -> sit to fit content
+    - make things hidden at first
+how to manage your real estate on xcode
+attributes inspector 
+    - change things like font, color, etc.
+how to add actions and outlets, connecting storyboard with the viewcontroller
+    - ctrl and drag to the viewcontroller.swift file
+weak vs. strong
+    - weak
+        - someone else created the variable, so I will only want a reference to that variable
+    - strong 
+        - I created the variable, it will continue to exist until I don't need it anymore
+       - as soon as a variable does not have anymore strong pointers, it will be deallocated
+       
+import UIKit
+    - UIView
+    - UIButton
+    - UILabel
