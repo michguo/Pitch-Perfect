@@ -1,0 +1,21 @@
+View (actor)
+    - the visible part of the app (images, buttons, text)
+Model (backstage)
+    - when we use app, we need to save some data (audio that we can play back)
+Controller (director)
+    - change speed
+    - transition between screen
+
+Open Xcode, create new xcode project
+    - apple makes two operating systems: iOS (mobile), OS X (desktop)
+select application on iOS
+    - many templates for application 
+select single view
+    - single view is the simplest, similar to blank template in presentation
+name it pitch perfect
+    - will appear below app icon on phone
+Organization Identifier
+    - reverse website name, e.g. udacity.com->com.udacity
+    - that way bundle identifier will be unique for our app
+choose swift
+choose iphone
