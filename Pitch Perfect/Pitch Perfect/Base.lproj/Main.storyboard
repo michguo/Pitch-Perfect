@@ -57,12 +57,12 @@
                                 <exclude reference="THC-RS-ccJ"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="6bU-CB-ZZU"/>
-                                <exclude reference="8EP-wI-Gr2"/>
                                 <exclude reference="7Zq-hP-p4d"/>
                                 <exclude reference="uHa-33-9iw"/>
                                 <exclude reference="00O-Jv-xSq"/>
                                 <exclude reference="c0O-9f-wj1"/>
+                                <exclude reference="6bU-CB-ZZU"/>
+                                <exclude reference="8EP-wI-Gr2"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -72,17 +72,19 @@
                                 <include reference="THC-RS-ccJ"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="6bU-CB-ZZU"/>
-                                <include reference="8EP-wI-Gr2"/>
                                 <include reference="7Zq-hP-p4d"/>
                                 <include reference="uHa-33-9iw"/>
                                 <include reference="00O-Jv-xSq"/>
                                 <include reference="c0O-9f-wj1"/>
+                                <include reference="6bU-CB-ZZU"/>
+                                <include reference="8EP-wI-Gr2"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="microphoneButton" destination="lEN-u2-YOT" id="eo9-Dj-MHN"/>
                         <outlet property="recordingInProgress" destination="0kk-qS-oIJ" id="g8R-Gi-cUg"/>
+                        <outlet property="stopButton" destination="THC-RS-ccJ" id="sra-5L-kQN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
