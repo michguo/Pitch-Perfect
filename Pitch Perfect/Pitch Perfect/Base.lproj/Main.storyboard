@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="nUr-LO-CoG">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
-        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -109,35 +108,69 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FeZ-g9-RCP">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <state key="normal" image="snail">
+                                <state key="normal" image="slow">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="playSlow:" destination="Tua-YR-zE5" eventType="touchUpInside" id="U7j-85-ADe"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PMd-yK-Eri">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" image="fast">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="playFast:" destination="Tua-YR-zE5" eventType="touchUpInside" id="915-gG-BBx"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MY3-AK-eYk">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" image="stop">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="stopButton:" destination="Tua-YR-zE5" eventType="touchUpInside" id="U4w-sA-pZz"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="FeZ-g9-RCP" firstAttribute="top" secondItem="SbC-6o-30a" secondAttribute="bottom" constant="50" id="6Wi-4N-NyH"/>
-                            <constraint firstItem="FeZ-g9-RCP" firstAttribute="leading" secondItem="3Ru-DM-GKS" secondAttribute="leadingMargin" constant="30" id="Ybp-bA-bQt"/>
+                            <constraint firstItem="PMd-yK-Eri" firstAttribute="top" secondItem="SbC-6o-30a" secondAttribute="bottom" constant="50" id="J11-Bb-mAP"/>
+                            <constraint firstAttribute="centerX" secondItem="MY3-AK-eYk" secondAttribute="centerX" constant="-2" id="P2m-Mu-ffL"/>
+                            <constraint firstItem="FeZ-g9-RCP" firstAttribute="leading" secondItem="3Ru-DM-GKS" secondAttribute="leadingMargin" constant="25" id="Ybp-bA-bQt"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="PMd-yK-Eri" secondAttribute="trailing" constant="25" id="hpg-aN-5l5"/>
+                            <constraint firstItem="MY3-AK-eYk" firstAttribute="top" secondItem="SbC-6o-30a" secondAttribute="bottom" constant="400" id="rKG-Vn-1x9"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="FeZ-g9-RCP"/>
+                                <exclude reference="PMd-yK-Eri"/>
+                                <exclude reference="MY3-AK-eYk"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="6Wi-4N-NyH"/>
                                 <exclude reference="Ybp-bA-bQt"/>
+                                <exclude reference="J11-Bb-mAP"/>
+                                <exclude reference="hpg-aN-5l5"/>
+                                <exclude reference="P2m-Mu-ffL"/>
+                                <exclude reference="rKG-Vn-1x9"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="FeZ-g9-RCP"/>
+                                <include reference="PMd-yK-Eri"/>
+                                <include reference="MY3-AK-eYk"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="6Wi-4N-NyH"/>
                                 <include reference="Ybp-bA-bQt"/>
+                                <include reference="J11-Bb-mAP"/>
+                                <include reference="hpg-aN-5l5"/>
+                                <include reference="P2m-Mu-ffL"/>
+                                <include reference="rKG-Vn-1x9"/>
                             </mask>
                         </variation>
                     </view>
@@ -166,8 +199,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="fast" width="100" height="100"/>
         <image name="microphone" width="100" height="100"/>
-        <image name="snail" width="100" height="100"/>
+        <image name="slow" width="100" height="100"/>
         <image name="stop" width="50" height="50"/>
     </resources>
 </document>
