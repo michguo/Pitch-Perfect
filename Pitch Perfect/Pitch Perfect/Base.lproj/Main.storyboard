@@ -8,7 +8,7 @@
         <!--Record-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="Pitch_Perfect" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="RecordSoundsViewController" customModule="Pitch_Perfect" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -39,7 +39,6 @@
                                 </state>
                                 <connections>
                                     <action selector="stopRecording:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="QVd-Pd-gYq"/>
-                                    <segue destination="Tua-YR-zE5" kind="show" id="gVG-4n-L7b"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -88,11 +87,12 @@
                         <outlet property="microphoneButton" destination="lEN-u2-YOT" id="eo9-Dj-MHN"/>
                         <outlet property="recordingInProgress" destination="0kk-qS-oIJ" id="g8R-Gi-cUg"/>
                         <outlet property="stopButton" destination="THC-RS-ccJ" id="sra-5L-kQN"/>
+                        <segue destination="Tua-YR-zE5" kind="show" identifier="stopRecording" id="dwJ-je-ESo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1299" y="369"/>
+            <point key="canvasLocation" x="1362" y="369"/>
         </scene>
         <!--Play Sounds View Controller-->
         <scene sceneID="HXh-rx-Hkm">
@@ -133,12 +133,34 @@
                                     <action selector="stopButton:" destination="Tua-YR-zE5" eventType="touchUpInside" id="U4w-sA-pZz"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tho-oA-u3U">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" image="chipmunk">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="playChipmunkAudio:" destination="Tua-YR-zE5" eventType="touchUpInside" id="0pr-if-owv"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n88-XO-6a8">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" image="darkvader">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="playVaderAudio:" destination="Tua-YR-zE5" eventType="touchUpInside" id="Zvx-Px-hSL"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="FeZ-g9-RCP" firstAttribute="top" secondItem="SbC-6o-30a" secondAttribute="bottom" constant="50" id="6Wi-4N-NyH"/>
+                            <constraint firstItem="n88-XO-6a8" firstAttribute="top" secondItem="PMd-yK-Eri" secondAttribute="bottom" constant="76" id="IpE-tP-VI6"/>
                             <constraint firstItem="PMd-yK-Eri" firstAttribute="top" secondItem="SbC-6o-30a" secondAttribute="bottom" constant="50" id="J11-Bb-mAP"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="n88-XO-6a8" secondAttribute="trailing" constant="25" id="MpY-c2-JcU"/>
                             <constraint firstAttribute="centerX" secondItem="MY3-AK-eYk" secondAttribute="centerX" constant="-2" id="P2m-Mu-ffL"/>
+                            <constraint firstItem="Tho-oA-u3U" firstAttribute="top" secondItem="FeZ-g9-RCP" secondAttribute="bottom" constant="76" id="RgF-fY-jBK"/>
+                            <constraint firstItem="Tho-oA-u3U" firstAttribute="leading" secondItem="3Ru-DM-GKS" secondAttribute="leadingMargin" constant="25" id="YOx-10-FVP"/>
                             <constraint firstItem="FeZ-g9-RCP" firstAttribute="leading" secondItem="3Ru-DM-GKS" secondAttribute="leadingMargin" constant="25" id="Ybp-bA-bQt"/>
                             <constraint firstAttribute="trailingMargin" secondItem="PMd-yK-Eri" secondAttribute="trailing" constant="25" id="hpg-aN-5l5"/>
                             <constraint firstItem="MY3-AK-eYk" firstAttribute="top" secondItem="SbC-6o-30a" secondAttribute="bottom" constant="400" id="rKG-Vn-1x9"/>
@@ -148,12 +170,18 @@
                                 <exclude reference="FeZ-g9-RCP"/>
                                 <exclude reference="PMd-yK-Eri"/>
                                 <exclude reference="MY3-AK-eYk"/>
+                                <exclude reference="Tho-oA-u3U"/>
+                                <exclude reference="n88-XO-6a8"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="6Wi-4N-NyH"/>
                                 <exclude reference="Ybp-bA-bQt"/>
                                 <exclude reference="J11-Bb-mAP"/>
                                 <exclude reference="hpg-aN-5l5"/>
+                                <exclude reference="RgF-fY-jBK"/>
+                                <exclude reference="YOx-10-FVP"/>
+                                <exclude reference="IpE-tP-VI6"/>
+                                <exclude reference="MpY-c2-JcU"/>
                                 <exclude reference="P2m-Mu-ffL"/>
                                 <exclude reference="rKG-Vn-1x9"/>
                             </mask>
@@ -163,12 +191,18 @@
                                 <include reference="FeZ-g9-RCP"/>
                                 <include reference="PMd-yK-Eri"/>
                                 <include reference="MY3-AK-eYk"/>
+                                <include reference="Tho-oA-u3U"/>
+                                <include reference="n88-XO-6a8"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="6Wi-4N-NyH"/>
                                 <include reference="Ybp-bA-bQt"/>
                                 <include reference="J11-Bb-mAP"/>
                                 <include reference="hpg-aN-5l5"/>
+                                <include reference="RgF-fY-jBK"/>
+                                <include reference="YOx-10-FVP"/>
+                                <include reference="IpE-tP-VI6"/>
+                                <include reference="MpY-c2-JcU"/>
                                 <include reference="P2m-Mu-ffL"/>
                                 <include reference="rKG-Vn-1x9"/>
                             </mask>
@@ -199,6 +233,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="chipmunk" width="100" height="100"/>
+        <image name="darkvader" width="100" height="100"/>
         <image name="fast" width="100" height="100"/>
         <image name="microphone" width="100" height="100"/>
         <image name="slow" width="100" height="100"/>
